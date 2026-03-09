@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="icon" type="image/png" href="atom.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Class 12 Physics Calculators • Instant Forgotten Units Converter (Furlong, Barn, Franklin, Slug) + Orbital Delta-V & Kinematics Solver. Real-time results. Perfect for CBSE, NCERT, JEE & NEET students and physics enthusiasts.">
+    <meta name="keywords" content="class 12 physics calculators, forgotten units converter, furlong calculator, barn unit converter, franklin charge, slug mass, orbital delta v calculator, kinematics solver, ncerts physics tools, cbse physics calculator, jee physics calculator">
+    <title>Physics Calculators • Class 12 Instant Tools | Forgotten Units • Orbital Delta-V</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <style>
+        /* Dashboard-specific styles (keeps global style.css clean) */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2.5rem;
+        }
+        .calc-card {
+            background: rgba(15, 23, 42, 0.75);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.1);
+        }
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--neon-cyan);
+        }
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(10, 10, 31, 0.9);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            color: white;
+            font-size: 1.15rem;
+            transition: all 0.3s;
+        }
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan);
+            outline: none;
+        }
+        .result {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 1.5rem 0;
+            min-height: 80px;
+        }
+        .unit-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (identical to all previous pages) -->
+    <nav>
+        <!-- SEARCH BAR -->
+
+    <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            
+            <a href="index.html" class="logo">
+                <span class="neon-text">PHYSICS</span><span class="accent">VERSE</span>
+            </a>
+    
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electricity.html">Electricity</a></li>
+                <li><a href="gravitation.html">Gravitation</a></li>
+                <li><a href="spaceflight.html">Spaceflight</a></li>
+                <li><a href="nuclear-physics.html">Nuclear Physics</a></li>
+                <li><a href="optics.html">Optics</a></li>
+                <li><a href="calculators.html" class="nav-btn">Calculators</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" style="height: 65vh; min-height: 560px; background: linear-gradient(rgba(10,10,31,0.8), rgba(10,10,31,0.85)), url('https://source.unsplash.com/featured/?physics,calculator,dashboard') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content glass" style="max-width: 860px; text-align: center;">
+            <h1 class="hero-title" style="font-size: clamp(2.8rem, 6vw, 4.5rem);">
+                Physics Calculators
+            </h1>
+            <p class="hero-subtitle" style="font-size: 1.45rem;">
+                Instant • Addictive • Zero Submit Button<br>
+                Forgotten Units • Orbital Delta-V • Kinematics
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.9;">Built for Class 12 CBSE • NCERT • JEE • NEET students &amp; physics lovers</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <!-- FORGOTTEN UNITS CONVERTER -->
+                <div class="calc-card glass" id="forgotten-converter">
+                    <h2 style="text-align:center; margin-bottom:2rem;">Forgotten Units Converter</h2>
+                    <p style="text-align:center; opacity:0.85; margin-bottom:2rem;">Convert SI units to rare classics used by physicists: Furlong, Barn, Franklin (Fr), Slug &amp; more</p>
+                    
+                    <div class="input-group">
+                        <label>Value</label>
+                        <input type="number" id="input-value" value="1" step="any" placeholder="Enter value">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="length">Length</option>
+                            <option value="mass">Mass</option>
+                            <option value="area">Area</option>
+                            <option value="charge">Charge</option>
+                        </select>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+                        <div class="input-group">
+                            <label>From</label>
+                            <select id="from-unit"></select>
+                        </div>
+                        <div class="input-group">
+                            <label>To</label>
+                            <select id="to-unit"></select>
+                        </div>
+                    </div>
+
+                    <div class="result" id="conversion-result">= 0.00497 Furlong</div>
+                    <div class="unit-label" id="result-unit" style="text-align:center;"></div>
+                </div>
+
+                <!-- KINEMATICS & ORBITAL DELTA-V SOLVERS -->
+                <div class="dashboard-grid" style="margin-top: 4rem;">
+
+                    <!-- KINEMATICS SOLVER -->
+                    <div class="calc-card glass">
+                        <h2 style="text-align:center;">Kinematics Solver (F = ma)</h2>
+                        <p style="text-align:center; opacity:0.85; margin:1.5rem 0;">Instant velocity from force &amp; mass – perfect for Class 12 motion problems</p>
+                        
+                        <div class="input-group">
+                            <label>Force (N)</label>
+                            <input type="number" id="force-kin" value="10" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label>Mass (kg)</label>
+                            <input type="number" id="mass-kin" value="2" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label>Time (s) – from rest</label>
+                            <input type="number" id="time-kin" value="5" step="any">
+                        </div>
+
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:2rem;">
+                            <div>
+                                <label style="font-size:0.95rem;">Acceleration</label>
+                                <div class="result" id="acc-result" style="font-size:1.8rem;">5.00 m/s²</div>
+                            </div>
+                            <div>
+                                <label style="font-size:0.95rem;">Final Velocity</label>
+                                <div class="result" id="vel-kin-result" style="font-size:1.8rem;">25.00 m/s</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ORBITAL DELTA-V SOLVER -->
+                    <div class="calc-card glass">
+                        <h2 style="text-align:center;">Orbital Delta-V Calculator</h2>
+                        <p style="text-align:center; opacity:0.85; margin:1.5rem 0;">Impulse approximation for orbit changes &amp; rocket staging (short burns)</p>
+                        
+                        <div class="input-group">
+                            <label>Thrust / Force (N)</label>
+                            <input type="number" id="thrust" value="15000" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label>Spacecraft Mass (kg)</label>
+                            <input type="number" id="mass-dv" value="1200" step="any">
+                        </div>
+                        <div class="input-group">
+                            <label>Burn Time (s)</label>
+                            <input type="number" id="time-dv" value="8" step="any">
+                        </div>
+
+                        <div style="text-align:center; margin-top:2rem;">
+                            <label style="font-size:0.95rem;">Δv (change in orbital velocity)</label>
+                            <div class="result" id="delta-v-result" style="font-size:2.4rem;">100.00 m/s</div>
+                        </div>
+                        <p style="text-align:center; font-size:0.95rem; opacity:0.7; margin-top:1rem;">(Real rockets use this for quick maneuvers)</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 5rem 0 3rem;">
+                    <a href="index.html" class="btn-neon secondary">← Back to Chapters</a>
+                    <a href="electricity.html" class="btn-neon primary" style="margin-left: 1rem;">Next: Electricity Theory →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="logo-small">PHYSICS<span class="accent">VERSE</span></span>
+                    <p>Built for Class 12 students • NCERT &amp; CBSE aligned</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="calculators.html">Calculators</a>
+                    <a href="gravitation.html">Gravitation</a>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2026 PhysicsVerse • Made with ❤️ for Physics lovers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+
+    <!-- Mobile menu script -->
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
+    <script defer src="main.js"></script>
+</body>
+</html>

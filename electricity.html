@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="icon" type="image/png" href="atom.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Electricity • PhysicsVerse</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    
+    <!-- MathJax for beautiful Class 12 formulas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Extra styles only for this theory page (keeps global style.css clean) */
+        .theory-article {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+        .theory-image {
+            width: 100%;
+            max-width: 720px;
+            border-radius: 20px;
+            margin: 2.5rem auto;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.15);
+            border: 1px solid var(--border);
+        }
+        .formula-box {
+            background: rgba(15, 23, 42, 0.85);
+            border-left: 6px solid var(--neon-cyan);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            font-size: 1.15rem;
+        }
+        .highlight-section {
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.08), rgba(255, 0, 204, 0.08));
+            padding: 3rem;
+            border-radius: 24px;
+            margin: 4rem 0;
+        }
+        h2, h3 {
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (identical to index.html for consistency) -->
+    <nav>
+        
+    <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            
+            <a href="index.html" class="logo">
+                <span class="neon-text">PHYSICS</span><span class="accent">VERSE</span>
+            </a>
+    
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electricity.html">Electricity</a></li>
+                <li><a href="gravitation.html">Gravitation</a></li>
+                <li><a href="spaceflight.html">Spaceflight</a></li>
+                <li><a href="nuclear-physics.html">Nuclear Physics</a></li>
+                <li><a href="optics.html">Optics</a></li>
+                <li><a href="calculators.html" class="nav-btn">Calculators</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CHAPTER HERO -->
+    <header class="hero" style="height: 60vh; min-height: 520px; background: linear-gradient(rgba(10,10,31,0.75), rgba(10,10,31,0.85)), url('https://source.unsplash.com/featured/?electricity,circuit') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content glass" style="max-width: 900px;">
+            <h1 class="hero-title" style="font-size: clamp(2.8rem, 5vw, 4rem);">
+                Current Electricity
+            </h1>
+            <p class="hero-subtitle" style="font-size: 1.4rem;">
+                NCERT Class 12 • Deep Theory + Derivations + Real-world Applications
+            </p>
+            <a href="#theory" class="btn-neon primary" style="margin-top: 1rem;">Begin Deep Dive ↓</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- INTRODUCTION -->
+        <section id="theory" class="section">
+            <div class="container">
+                <article class="theory-article glass">
+                    <h2>Introduction to Current Electricity</h2>
+                    <p>Electric current is the rate of flow of electric charge through a conductor. In metallic conductors, free electrons are the charge carriers. The SI unit of current is ampere (A), defined as one coulomb of charge passing through a cross-section per second.</p>
+                    
+                    <p>Current electricity forms the foundation of almost all modern technology — from household wiring to complex electronic circuits. In this chapter we explore the microscopic picture (drift velocity), macroscopic laws (Ohm’s law, Kirchhoff’s laws), and practical voltage-stepping techniques used in real devices.</p>
+
+                    <!-- Image 1: Drift Velocity -->
+                    <img src="e1.png" 
+                         alt="Diagram showing drift velocity of electrons in a conductor under electric field" 
+                         class="theory-image">
+
+                    <h3>Drift Velocity – The Microscopic Picture</h3>
+                    <p>When an electric field \( \mathbf{E} \) is applied across a conductor, free electrons experience a force \( \mathbf{F} = -e\mathbf{E} \). They accelerate but frequently collide with lattice ions, losing momentum. The average velocity gained between collisions is called <strong>drift velocity</strong> \( v_d \).</p>
+                    
+                    <div class="formula-box">
+                        \[ v_d = \frac{eE\tau}{m} \]
+                        where \( e \) = charge of electron, \( E \) = electric field, \( \tau \) = relaxation time (average time between collisions), \( m \) = mass of electron.
+                    </div>
+
+                    <p>The current \( I \) through a wire of cross-section area \( A \) and electron density \( n \) is then:</p>
+                    <div class="formula-box">
+                        \[ I = neAv_d \]
+                    </div>
+                    <p>This relation beautifully connects microscopic motion to the measurable current. Typical drift velocity in copper wires is only ~0.1 mm/s even at high currents — electrons drift very slowly, but the electric field propagates almost at speed of light.</p>
+                </article>
+
+                <!-- VOLTAGE DROP & OHM'S LAW -->
+                <article class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Voltage Drops and Ohm’s Law</h2>
+                    <p>Potential difference (voltage) across a resistor causes a drop \( V = IR \). In series circuits, total voltage is sum of individual drops. This is crucial for designing safe circuits and understanding power dissipation \( P = I^2R = V^2/R \).</p>
+                    
+                    <p>Resistance \( R \) depends on material resistivity \( \rho \), length \( l \), and area \( A \):</p>
+                    <div class="formula-box">
+                        \[ R = \frac{\rho l}{A} \]
+                    </div>
+                </article>
+
+                <!-- KIRCHHOFF'S LAWS -->
+                <article class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Kirchhoff’s Laws – Conservation Principles</h2>
+                    
+                    <!-- Image 2: Kirchhoff's Laws -->
+                    <img src="e2.png" 
+                         alt="Kirchhoff's Current Law and Voltage Law diagram with example circuit" 
+                         class="theory-image">
+
+                    <h3>Kirchhoff’s Current Law (KCL)</h3>
+                    <p>At any junction, the algebraic sum of currents is zero:</p>
+                    <div class="formula-box">
+                        \[ \sum I_{\text{in}} = \sum I_{\text{out}} \quad \text{or} \quad \sum I = 0 \]
+                    </div>
+                    <p>This follows from conservation of charge — charge cannot accumulate at a junction.</p>
+
+                    <h3>Kirchhoff’s Voltage Law (KVL)</h3>
+                    <p>The algebraic sum of potential differences around any closed loop is zero:</p>
+                    <div class="formula-box">
+                        \[ \sum V = 0 \]
+                    </div>
+                    <p>This is conservation of energy — total work done by the field in a loop is zero. KVL is used to solve complex circuits with multiple loops and cells.</p>
+                </article>
+
+                <!-- PRACTICAL APPLICATION -->
+                <article class="theory-article glass highlight-section" style="margin-top: 4rem;">
+                    <h2>Practical Application: Stepping Up 1.5 V Cell Using Diodes</h2>
+                    
+                    <!-- Image 3: Voltage Doubler -->
+                    <img src="e3.png" 
+                         alt="Voltage doubler circuit using diodes and capacitors to step up DC voltage" 
+                         class="theory-image">
+
+                    <p>A standard 1.5 V alkaline cell cannot directly drive most LEDs (forward voltage ~2–3.2 V) or small DC motors. Using a <strong>diode-capacitor voltage doubler</strong> (or Villard cascade), we can step up the voltage.</p>
+                    
+                    <p>The circuit works by charging capacitors in parallel during one half-cycle and discharging them in series during the other, effectively doubling the peak voltage minus diode drops (~0.7 V each). In practice, a 555 timer IC or mechanical switch creates the necessary oscillation from the DC cell.</p>
+
+                    <h3>Calculation: Current Required from 1.5 V Cell</h3>
+                    <p>Target: 3.2 V output at 500 mA (0.5 A) to run LEDs + DC motors in series.</p>
+                    
+                    <div class="formula-box">
+                        <strong>Output Power</strong><br>
+                        \[ P_{\text{out}} = V_{\text{out}} \times I_{\text{out}} = 3.2 \times 0.5 = 1.6 \, \text{W} \]
+                    </div>
+                    
+                    <p>Real circuits have losses: diode forward drops (~1.4 V total), capacitor ESR, and conversion efficiency ~75–85 %. Assuming conservative 80 % efficiency:</p>
+                    
+                    <div class="formula-box">
+                        <strong>Input Power Required</strong><br>
+                        \[ P_{\text{in}} = \frac{P_{\text{out}}}{\eta} = \frac{1.6}{0.8} = 2 \, \text{W} \]
+                    </div>
+                    
+                    <div class="formula-box">
+                        <strong>Current Drawn from 1.5 V Cell</strong><br>
+                        \[ I_{\text{in}} = \frac{P_{\text{in}}}{V_{\text{in}}} = \frac{2}{1.5} \approx 1.33 \, \text{A} \]
+                    </div>
+                    
+                    <p><strong>Conclusion:</strong> The 1.5 V cell must supply ~1.33 A. Use a high-capacity AA/AAA cell or parallel cells. In voltage doubler, input current is roughly twice the output current due to charge-pumping action, which matches our result closely.</p>
+                </article>
+
+                <div style="text-align: center; margin: 4rem 0;">
+                    <a href="index.html" class="btn-neon secondary">← Back to Home</a>
+                    <a href="calculators.html" class="btn-neon primary" style="margin-left: 1rem;">Open Current Electricity Calculators →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (same as index) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="logo-small">PHYSICS<span class="accent">VERSE</span></span>
+                    <p>Built for Class 12 students • NCERT &amp; CBSE aligned</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="electricity.html">Electricity</a>
+                    <a href="calculators.html">Calculators</a>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2026 PhysicsVerse • Made with ❤️ for Physics lovers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
+    <script defer src="main.js"></script>
+</body>
+</html>

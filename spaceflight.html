@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="icon" type="image/png" href="atom.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceflight &amp; Rocketry Physics | PSLV GSLV Staging | Orbital Mechanics | ISRO Launches | Class 12 Maharashtra HSC CBSE JEE | PhysicsVerse</title>
+    <meta name="description" content="Master Spaceflight Physics Class 12: Rocket equation, multi-stage rocketry (PSLV &amp; GSLV detailed staging), orbital mechanics, delta-v calculations, escape velocity &amp; real ISRO launches. Full derivations + Cultural Physics coconut-breaking ritual. Perfect for Maharashtra HSC Board, CBSE, JEE Main/Advanced 2026 &amp; every physics &amp; space enthusiast.">
+    <meta name="keywords" content="spaceflight physics class 12, rocketry notes class 12, pslv gslv staging physics, isro launch physics, rocket equation jee, orbital mechanics class 12, delta v calculator, multi stage rocket physics, maharashtra hsc physics spaceflight, cbse class 12 gravitation rocketry, jee mains spaceflight pyq, isro pslv gslv notes, coconut breaking ritual physics, physicsverse spaceflight">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PhysicsVerse">
+    <meta property="og:title" content="Spaceflight &amp; Rocketry | PSLV GSLV | ISRO | Class 12 Physics | PhysicsVerse">
+    <meta property="og:description" content="Deep dive into rocket staging, orbital mechanics &amp; real ISRO launches with coconut ritual physics calculation">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    
+    <!-- MathJax for formulas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        .theory-article {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+        .theory-image {
+            width: 100%;
+            max-width: 760px;
+            border-radius: 20px;
+            margin: 2.5rem auto;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.15);
+            border: 1px solid var(--border);
+        }
+        .formula-box {
+            background: rgba(15, 23, 42, 0.85);
+            border-left: 6px solid var(--neon-cyan);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            font-size: 1.15rem;
+        }
+        .highlight-section {
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.08), rgba(255, 0, 204, 0.08));
+            padding: 3rem;
+            border-radius: 24px;
+            margin: 4rem 0;
+        }
+        .staging-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        h2, h3 {
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+      
+    <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            
+            <a href="index.html" class="logo">
+                <span class="neon-text">PHYSICS</span><span class="accent">VERSE</span>
+            </a>
+    
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electricity.html">Electricity</a></li>
+                <li><a href="gravitation.html">Gravitation</a></li>
+                <li><a href="spaceflight.html">Spaceflight</a></li>
+                <li><a href="nuclear-physics.html">Nuclear Physics</a></li>
+                <li><a href="optics.html">Optics</a></li>
+                <li><a href="calculators.html" class="nav-btn">Calculators</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" style="height: 60vh; min-height: 520px; background: linear-gradient(rgba(10,10,31,0.75), rgba(10,10,31,0.85)), url('https://source.unsplash.com/featured/?isro,rocket,launch') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content glass" style="max-width: 920px;">
+            <h1 class="hero-title" style="font-size: clamp(2.8rem, 5vw, 4rem);">
+                Spaceflight &amp; Rocketry
+            </h1>
+            <p class="hero-subtitle" style="font-size: 1.4rem;">
+                PSLV &amp; GSLV Staging • Tsiolkovsky Rocket Equation • Orbital Insertion<br>
+                Real ISRO Physics + Coconut Ritual Calculation
+            </p>
+            <a href="#theory" class="btn-neon primary" style="margin-top: 1rem;">Launch Into Theory ↓</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="theory" class="section">
+            <div class="container">
+
+                <!-- INTRODUCTION -->
+                <section class="theory-article glass">
+                    <h2>Physics of Rocketry &amp; Orbital Mechanics – Class 12 Level</h2>
+                    <p>Rockets work on Newton’s 3rd law: action-reaction. Hot gases expelled backward at high velocity produce forward thrust. In vacuum (space), there is no air to push against — thrust comes purely from momentum conservation.</p>
+                    
+                    <div class="formula-box">
+                        Thrust \( F = -v_e \frac{dm}{dt} \) (where \( v_e \) = exhaust velocity, \( \frac{dm}{dt} \) = mass flow rate)
+                    </div>
+                </section>
+
+                <!-- ROCKET EQUATION -->
+                <section class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Tsiolkovsky Rocket Equation – The Heart of Spaceflight</h2>
+                    <p>The change in velocity (Δv) a rocket can achieve depends only on exhaust velocity and the ratio of initial to final mass:</p>
+                    <div class="formula-box">
+                        \[ \Delta v = v_e \ln\left(\frac{m_0}{m_f}\right) \]
+                    </div>
+                    <p>This is why staging is essential — discarding empty tanks reduces \( m_f \) dramatically.</p>
+                </section>
+
+                <!-- STAGING PHYSICS -->
+                <section class="theory-article glass highlight-section" style="margin-top: 4rem;">
+                    <h2>Specific Staging Physics: ISRO’s PSLV &amp; GSLV</h2>
+                    
+                    <!-- Image 1: Rocket Staging Diagram -->
+                    <img src="s1.png" 
+                         alt="Multi-stage rocket diagram showing sequential separation of stages for efficient orbital insertion – PSLV GSLV physics" 
+                         class="theory-image" loading="lazy">
+
+                    <div class="staging-grid">
+                        <div>
+                            <h3>PSLV (4 Stages)</h3>
+                            <ul>
+                                <li>Stage 1: Solid (PS1 + 6 strap-ons) – 4,800 kN thrust, burns 1st stage fuel</li>
+                                <li>Stage 2: Liquid Vikas engine – precise control</li>
+                                <li>Stage 3: Solid – high altitude boost</li>
+                                <li>Stage 4: Liquid – final circularisation at 7.8 km/s</li>
+                            </ul>
+                            <p>Payload to LEO: 1,750 kg. Total Δv ≈ 9.5 km/s after losses.</p>
+                        </div>
+                        <div>
+                            <h3>GSLV Mk III (LVM3)</h3>
+                            <ul>
+                                <li>Two solid S200 boosters (strap-ons)</li>
+                                <li>Liquid core (L110) – Vikas engines</li>
+                                <li>Cryogenic upper stage (CE-20) – LOX/LH₂, Isp = 443 s</li>
+                            </ul>
+                            <p>Payload to GTO: 4,000 kg. Cryogenic stage gives highest specific impulse in India.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ORBITAL MECHANICS -->
+                <section class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Orbital Mechanics &amp; Reaching Orbit</h2>
+                    <p>To stay in low Earth orbit (LEO ~300 km), a satellite needs orbital velocity ~7.8 km/s. Gravity provides centripetal force:</p>
+                    <div class="formula-box">
+                        \[ v_{\text{orb}} = \sqrt{\frac{GM}{r}} \approx 7.8 \, \text{km/s} \]
+                    </div>
+                    
+                    <!-- Image 2: Satellite Orbit -->
+                    <img src="s2.png" 
+                         alt="Newton's cannonball diagram explaining orbital velocity and circular orbits around Earth" 
+                         class="theory-image" loading="lazy">
+                </section>
+
+                <!-- CULTURAL PHYSICS SECTION -->
+                <section class="theory-article glass highlight-section" style="margin-top: 4rem;">
+                    <h2>Cultural Physics: The Coconut-Breaking Ritual at ISRO Launches</h2>
+                    
+                    <!-- Image 3: ISRO Launch with Foreground Photographer -->
+                    <img src="s3.png" 
+                         alt="ISRO PSLV rocket launch at Sriharikota with photographers and camera girl in the foreground capturing the historic liftoff – real spaceflight excitement" 
+                         class="theory-image" loading="lazy">
+
+                    <p>Before every ISRO launch, a coconut is ceremonially broken at the launch pad — an ancient tradition for blessings and success. But what’s the physics?</p>
+                    
+                    <p>Typical coconut: mass \( m = 1.5 \) kg. To crack it, it must experience sudden deceleration. Assume it is smashed with relative speed \( v = 6 \) m/s (typical hand strike or drop from ~2 m) and comes to rest in contact time \( \Delta t = 0.02 \) s.</p>
+                    
+                    <div class="formula-box">
+                        Change in momentum \( \Delta p = m \Delta v = 1.5 \times 6 = 9 \) kg·m/s<br>
+                        Average force \( F_{\text{avg}} = \frac{\Delta p}{\Delta t} = \frac{9}{0.02} = 450 \) N<br>
+                        Impulse \( J = \Delta p = 9 \) N·s
+                    </div>
+                    
+                    <p>This 450 N force is enough to crack the shell (real breaking strength of coconut ~300–500 N). Compare to rocket thrust: PSLV Stage-1 produces 4,800,000 N — over 10,000 times more! The ritual symbolises transferring human energy and prayers into the massive impulse of the launch.</p>
+                </section>
+
+                <div style="text-align: center; margin: 5rem 0;">
+                    <a href="index.html" class="btn-neon secondary">← Back to Home</a>
+                    <a href="calculators.html" class="btn-neon primary" style="margin-left: 1rem;">Open Spaceflight Calculators →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="logo-small">PHYSICS<span class="accent">VERSE</span></span>
+                    <p>Built for Class 12 students • Maharashtra HSC, CBSE &amp; JEE aligned</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="spaceflight.html">Spaceflight</a>
+                    <a href="calculators.html">Calculators</a>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2026 PhysicsVerse • Made with ❤️ for every physics student &amp; ISRO enthusiast</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
+    <script defer src="main.js"></script>
+</body>
+</html>

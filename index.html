@@ -1,20 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <link rel="icon" type="image/png" href="atom.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
+    <title>PhysicsVerse • Class 12 Physics</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
 </head>
 <body>
+    <!-- NAVIGATION -->
+    <nav>
 
-    <div class="card">
-        <div class="image-space"></div>
-        <h1>Alex Rivera</h1>
-        <p>Web Developer & Designer</p>
-        <button id="followBtn">Follow</button>
-    </div>
+    <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            
+            <a href="index.html" class="logo">
+                <span class="neon-text">PHYSICS</span><span class="accent">VERSE</span>
+            </a>
+    
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electricity.html">Electricity</a></li>
+                <li><a href="gravitation.html">Gravitation</a></li>
+                <li><a href="spaceflight.html">Spaceflight</a></li>
+                <li><a href="nuclear-physics.html">Nuclear Physics</a></li>
+                <li><a href="optics.html">Optics</a></li>
+                <li><a href="calculators.html" class="nav-btn">Calculators</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <script src="script.js"></script>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content glass">
+            <h1 class="hero-title">
+                Master Class 12 Physics<br>
+                <span class="neon-text">with Style</span>
+            </h1>
+            <p class="hero-subtitle">Complete NCERT + CBSE theory • Interactive derivations • Built-in calculators • Glassmorphism UI</p>
+            
+            <div class="hero-buttons">
+                <a href="#chapters" class="btn-neon primary">Explore Chapters</a>
+                <a href="calculators.html" class="btn-neon secondary">Open Calculators</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>SCROLL TO EXPLORE</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- FEATURED CHAPTERS -->
+    <section id="chapters" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Chapters</h2>
+            <div class="grid">
+                <!-- Card 1 -->
+                <a href="electricity.html" class="card glass">
+                    <div class="card-icon">⚡</div>
+                    <h3>Electricity</h3>
+                    <p>Current electricity, Kirchhoff’s laws, Wheatstone bridge, Potentiometer</p>
+                    <span class="card-link">Start Learning →</span>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="gravitation.html" class="card glass">
+                    <div class="card-icon">🌍</div>
+                    <h3>Gravitation</h3>
+                    <p>Kepler’s laws, Universal law, Gravitational potential energy, Escape velocity</p>
+                    <span class="card-link">Start Learning →</span>
+                </a>
+
+                   
+
+                <!-- Card 4 -->
+                <a href="optics.html" class="card glass">
+                    <div class="card-icon">🔎</div>
+                    <h3>Ray Optics</h3>
+                    <p>Refraction, Lenses, Prism, Optical instruments, Wave optics</p>
+                    <span class="card-link">Start Learning →</span>
+                </a>
+
+           
+
+                <!-- Card 6 -->
+                <a href="calculators.html" class="card glass highlight">
+                    <div class="card-icon">🧮</div>
+                    <h3>Physics Calculators</h3>
+                    <p>Instant results for all Class 12 formulas — no installation needed</p>
+                    <span class="card-link accent">Open Now →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="logo-small">PHYSICS<span class="accent">VERSE</span></span>
+                    <p>Built for Class 12 students • NCERT &amp; CBSE aligned</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="electricity.html">Electricity</a>
+                    <a href="gravitation.html">Gravitation</a>
+                    <a href="calculators.html">Calculators</a>
+                </div>
+                <div class="footer-right">
+                    <p>; 2026 PhysicsVerse • Made with ❤️ for Physics lovers</p>
+                    <p>Ready to host on GitHub Pages in 60 seconds by nish</p>
+                </div>
+            </div>
+        </div>
+       <p style="font-size: 4px;"> AI(Gemini and grok) generated images and content might be inaccurate ,iss website k sirf aur sirf time pass ke uddeshya se banaya gaya hai kirpaya yaha se koi jankari pe bharosa na kare ,image and diagram credits to Gemini and content credit to respective owner and grok ai</p>
+    </footer>
+
+    <!-- Simple JS for mobile menu close on click (optional but nice) -->
+    <script>
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
+    <script defer src="main.js"></script>
 </body>
 </html>

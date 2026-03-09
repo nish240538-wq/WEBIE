@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="icon" type="image/png" href="atom.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravitation &amp; Spaceflight • PhysicsVerse</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    
+    <!-- MathJax for Class 12 formulas -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        /* Page-specific enhancements (keeps global style.css untouched) */
+        .theory-article {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+        .theory-image {
+            width: 100%;
+            max-width: 760px;
+            border-radius: 20px;
+            margin: 2.5rem auto;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.15);
+            border: 1px solid var(--border);
+        }
+        .formula-box {
+            background: rgba(15, 23, 42, 0.85);
+            border-left: 6px solid var(--neon-cyan);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            font-size: 1.15rem;
+        }
+        .highlight-section {
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.08), rgba(255, 0, 204, 0.08));
+            padding: 3rem;
+            border-radius: 24px;
+            margin: 4rem 0;
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .comparison-card {
+            background: rgba(15, 23, 42, 0.65);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        h2, h3 {
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION (identical to index.html & electricity.html) -->
+    <nav>
+        
+    <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            
+            <a href="index.html" class="logo">
+                <span class="neon-text">PHYSICS</span><span class="accent">VERSE</span>
+            </a>
+    
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="electricity.html">Electricity</a></li>
+                <li><a href="gravitation.html">Gravitation</a></li>
+                <li><a href="spaceflight.html">Spaceflight</a></li>
+                <li><a href="nuclear-physics.html">Nuclear Physics</a></li>
+                <li><a href="optics.html">Optics</a></li>
+                <li><a href="calculators.html" class="nav-btn">Calculators</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CHAPTER HERO -->
+    <header class="hero" style="height: 60vh; min-height: 520px; background: linear-gradient(rgba(10,10,31,0.75), rgba(10,10,31,0.85)), url('https://source.unsplash.com/featured/?space,orbit,gravitation') center/cover no-repeat;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content glass" style="max-width: 920px;">
+            <h1 class="hero-title" style="font-size: clamp(2.8rem, 5vw, 4rem);">
+                Gravitation &amp; Spaceflight
+            </h1>
+            <p class="hero-subtitle" style="font-size: 1.4rem;">
+                NCERT Class 12 • Orbital Mechanics • Escape Velocity • Real Rockets (PSLV &amp; GSLV)
+            </p>
+            <a href="#theory" class="btn-neon primary" style="margin-top: 1rem;">Begin Deep Dive ↓</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="theory" class="section">
+            <div class="container">
+
+                <!-- INTRODUCTION + UNIVERSAL LAW -->
+                <article class="theory-article glass">
+                    <h2>Universal Law of Gravitation</h2>
+                    <p>Every particle in the universe attracts every other particle with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between their centres.</p>
+                    
+                    <div class="formula-box">
+                        \[ F = G \frac{m_1 m_2}{r^2} \]
+                        where \( G = 6.67430 \times 10^{-11} \, \text{N·m}^2\text{kg}^{-2} \) (universal gravitational constant).
+                    </div>
+
+                    <p>This inverse-square law explains planetary motion, tides, and satellite orbits. It is the foundation of all classical gravitational physics.</p>
+
+                    <!-- Image 1: Newton's Cannonball -->
+                    <img src="g1.png" 
+                         alt="Newton's cannonball thought experiment showing how orbital velocity leads to circular or elliptical orbits around Earth" 
+                         class="theory-image" loading="lazy">
+                </article>
+
+                <!-- ORBITAL MECHANICS -->
+                <article class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Orbital Mechanics &amp; Kepler’s Laws</h2>
+                    <p>For a satellite in circular orbit, gravitational force provides the centripetal force:</p>
+                    <div class="formula-box">
+                        \[ G \frac{M m}{r^2} = m \frac{v^2}{r} \implies v = \sqrt{\frac{GM}{r}} \]
+                    </div>
+                    <p>Orbital period \( T = 2\pi \sqrt{\frac{r^3}{GM}} \) (Kepler’s 3rd law).</p>
+
+                    <p>Kepler’s laws describe elliptical orbits with the central body at one focus. In zero-drag environments (above atmosphere), these orbits are stable forever.</p>
+                </article>
+
+                <!-- ESCAPE VELOCITY -->
+                <article class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Escape Velocity – Breaking Free from Gravity</h2>
+                    <p>The minimum speed required to escape a planet’s gravitational pull without further propulsion is given by energy conservation (total mechanical energy = 0 at infinity):</p>
+                    <div class="formula-box">
+                        \[ v_{\text{esc}} = \sqrt{\frac{2GM}{R}} = \sqrt{2gR} \]
+                    </div>
+                    <p>For Earth: \( v_{\text{esc}} \approx 11.2 \, \text{km/s} \) (≈ 40,000 km/h).</p>
+                </article>
+
+                <!-- SPECIAL CALCULATION: 1324.5 km ALTITUDE -->
+                <article class="theory-article glass highlight-section" style="margin-top: 4rem;">
+                    <h2>Mathematical Breakdown: Reaching Exactly 1324.5 km in Zero-Drag Environment</h2>
+                    
+                    <p>Consider a projectile launched vertically from Earth’s surface in a zero-drag environment (ideal space). We want the maximum (apogee) altitude to be exactly \( h = 1324.5 \) km.</p>
+                    
+                    <div class="formula-box">
+                        Earth radius \( R = 6371 \) km = \( 6.371 \times 10^6 \) m<br>
+                        Final distance from centre \( r = R + h = 7695.5 \) km = \( 7.6955 \times 10^6 \) m
+                    </div>
+                    
+                    <p>Conservation of mechanical energy (initial KE + PE = final PE at apogee where velocity = 0):</p>
+                    <div class="formula-box">
+                        \[ \frac{1}{2}mv^2 - \frac{GMm}{R} = -\frac{GMm}{r} \]
+                        \[ \frac{1}{2}v^2 = GM\left( \frac{1}{R} - \frac{1}{r} \right) \]
+                        \[ v = \sqrt{2GM\left( \frac{1}{R} - \frac{1}{r} \right)} \]
+                    </div>
+                    
+                    <p>Using \( GM = 3.986 \times 10^{14} \) m³/s²:</p>
+                    <div class="formula-box">
+                        \[ v \approx 9.87 \, \text{km/s} \]
+                    </div>
+                    <p><strong>Result:</strong> Launch at 9.87 km/s vertically → apogee exactly 1324.5 km. Beyond this speed the object would never return (escape velocity is 11.2 km/s).</p>
+                </article>
+
+                <!-- KINETIC ENERGY OF PARTICLES -->
+                <article class="theory-article glass" style="margin-top: 4rem;">
+                    <h2>Kinetic Energy of a System of Particles (1.27 m/s Example)</h2>
+                    <p>Total kinetic energy of a system is the scalar sum of individual kinetic energies (no vector cancellation):</p>
+                    <div class="formula-box">
+                        \[ K_{\text{total}} = \sum_{i=1}^{N} \frac{1}{2} m_i v_i^2 \]
+                    </div>
+                    
+                    <p>Consider 250 particles, each of mass 2 kg, moving at exactly 1.27 m/s (random directions, zero-drag space environment):</p>
+                    <div class="formula-box">
+                        \[ K_{\text{per particle}} = \frac{1}{2} \times 2 \times (1.27)^2 = 1.6129 \, \text{J} \]<br>
+                        \[ K_{\text{total}} = 250 \times 1.6129 = 403.225 \, \text{J} \]
+                    </div>
+                    <p>This illustrates why even tiny velocities contribute significantly when scaled (rocket exhaust particles, asteroid debris, etc.).</p>
+                </article>
+
+                <!-- LAUNCH VEHICLES: PSLV & GSLV -->
+                <article class="theory-article glass highlight-section" style="margin-top: 4rem;">
+                    <h2>Real-World Physics: Staging &amp; Propulsion of PSLV &amp; GSLV</h2>
+                    
+                    <!-- Image 2: PSLV Launch -->
+                    <img src="g2.png" 
+                         alt="PSLV-C37 rocket launch carrying 104 satellites into orbit – demonstrating multi-stage propulsion" 
+                         class="theory-image" loading="lazy">
+
+                    <!-- Image 3: Rocket Staging Diagram -->
+                    <img src="g3.png" 
+                         alt="Multi-stage rocket diagram showing sequential separation of stages for efficient orbital insertion" 
+                         class="theory-image" loading="lazy">
+
+                    <p><strong>PSLV (Polar Satellite Launch Vehicle)</strong> – 4 stages:<br>
+                    Stage 1: Solid propellant (boost thrust)<br>
+                    Stage 2: Liquid (Vikas engine)<br>
+                    Stage 3: Solid<br>
+                    Stage 4: Liquid (precision orbit insertion)<br>
+                    Payload to LEO: up to 1,750 kg. Used for 104-satellite record launch.</p>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h3>PSLV</h3>
+                            <ul>
+                                <li>4 stages (solid-liquid-solid-liquid)</li>
+                                <li>Core + 6 strap-on boosters</li>
+                                <li>Excellent for polar/sun-synchronous orbits</li>
+                                <li>Proven reliability: 58+ successful missions</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-card">
+                            <h3>GSLV</h3>
+                            <ul>
+                                <li>3 stages with cryogenic upper stage</li>
+                                <li>Liquid core + solid boosters</li>
+                                <li>Designed for heavier GTO payloads (up to 4,000 kg)</li>
+                                <li>Cryogenic engine (LOX/LH₂) gives higher specific impulse (~450 s)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p>The key physics: each stage discards dead mass after burnout, increasing effective exhaust velocity and allowing the rocket equation \( \Delta v = v_e \ln(m_0/m_f) \) to achieve orbital velocity (≈7.8 km/s) from rest.</p>
+                </article>
+
+                <div style="text-align: center; margin: 5rem 0;">
+                    <a href="index.html" class="btn-neon secondary">← Back to Home</a>
+                    <a href="calculators.html" class="btn-neon primary" style="margin-left: 1rem;">Open Gravitation Calculators →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="logo-small">PHYSICS<span class="accent">VERSE</span></span>
+                    <p>Built for Class 12 students • NCERT &amp; CBSE aligned</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="gravitation.html">Gravitation</a>
+                    <a href="calculators.html">Calculators</a>
+                </div>
+                <div class="footer-right">
+                    <p>&copy; 2026 PhysicsVerse • Made with ❤️ for Physics lovers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
+    <script defer src="main.js"></script>
+</body>
+</html>
